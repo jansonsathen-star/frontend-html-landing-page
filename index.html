@@ -12,6 +12,9 @@ HTML5 document declaration
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="style.css" />
 
     <title>Frontend Agency</title>
 
@@ -20,9 +23,10 @@ HTML5 document declaration
       content="We build modern and accessible frontend websites." />
   </head>
 
-  <body>
+  <body class="dark">
     <header>
       <h1>Frontend Agency</h1>
+
       <nav aria-label="Main navigation">
         <a href="#services">Services</a>
         <a href="#about">About</a>
@@ -31,18 +35,23 @@ HTML5 document declaration
       </nav>
     </header>
 
-    <main>
+    <main class="container">
       <section id="services">
         <h2>Our Services</h2>
-        <article>
+        <article class="card">
           <h3>Frontend Development</h3>
 
           <p>We build fast and responsive user interfaces.</p>
         </article>
 
-        <article>
+        <article class="card">
           <h3>React Applications</h3>
           <p>Modern SPA development using React.</p>
+        </article>
+        <article class="card">
+          <span class="badge">NEW</span>
+          <h3>Frontend Development</h3>
+          <p>We build fast UI.</p>
         </article>
       </section>
 
@@ -63,20 +72,50 @@ HTML5 document declaration
       <section id="contact">
         <h2>Contact Us</h2>
 
-        <form>
-          <label for="email"> Email </label>
+        <form class="contactForm">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            data-required="true"
+            data-label="Name" />
+
+          <label for="email">Email</label>
           <input
             type="email"
             id="email"
-            name="email"
-            required />
-          <button type="submit">Send</button>
+            data-required="true"
+            data-label="Email"
+            data-type="email" />
+
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            data-required="true"
+            data-label="Message"></textarea>
+
+          <p id="formMessage"></p>
+
+          <button
+            class="SendBtn"
+            type="submit">
+            Send
+          </button>
         </form>
       </section>
     </main>
+    <a
+      href="#contact"
+      class="floating-btn">
+      Contact
+    </a>
+    <p id="msg"></p>
+    <button id="btn">Load Info</button>
+    <p id="statusMessage"></p>
 
     <footer>
       <p>© 2025 Frontend Agency</p>
     </footer>
   </body>
+  <script src="app.js"></script>
 </html>
